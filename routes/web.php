@@ -9,7 +9,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::middleware(['role:admin'])->group(function($route) {
-    $route->resource('user', UserController::class );
+    $route->resource('users', UserController::class );
     Route::resource('products', ProductController::class);
 });
 Route::get('cart', [ProductController::class, 'cart'])->name('cart');
